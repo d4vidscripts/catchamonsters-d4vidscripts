@@ -1,17 +1,17 @@
--- d4vidscripts: Vuelo + Fast + TP a 3 islas + Minimizar/Restaurar
+-- d4vidscripts: Vuelo + Fast + TP + Minimizar
 local P=game.Players.LocalPlayer
 local G=P:WaitForChild("PlayerGui")
 local S=Instance.new("ScreenGui",G) S.Name="d4vidscripts"
 local F=Instance.new
 local BG,ACC,BTN=Color3.fromRGB(35,35,35),Color3.fromRGB(100,100,255),Color3.fromRGB(60,60,60)
 
--- GUI Principal
+-- GUI principal
 local M=F("Frame",S);M.Size=UDim2.new(0,320,0,220);M.Position=UDim2.new(0.35,0,0.25,0);M.BackgroundColor3=BG
 local H=F("Frame",M);H.Size=UDim2.new(1,0,0,30);H.BackgroundColor3=Color3.fromRGB(25,25,25)
 local T=F("TextLabel",H);T.Size=UDim2.new(1,-60,1,0);T.Position=UDim2.new(0,10,0,0)
 T.BackgroundTransparency=1;T.Text="d4vidscripts";T.TextXAlignment=Enum.TextXAlignment.Left;T.TextColor3=Color3.new(1,1,1)
 
--- Botón minimizar/restaurar
+-- Minimizar / restaurar
 local minimize=F("TextButton",H);minimize.Size=UDim2.new(0,28,0,20);minimize.Position=UDim2.new(1,-58,0,5)
 minimize.Text="—";minimize.BackgroundColor3=BTN
 local floatIcon=F("TextButton",S);floatIcon.Size=UDim2.new(0,64,0,64);floatIcon.Position=UDim2.new(0.05,0,0.6,0)
