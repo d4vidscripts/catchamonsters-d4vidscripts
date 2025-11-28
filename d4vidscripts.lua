@@ -1,4 +1,4 @@
--- d4vidscripts: Vuelo + Fast + TP a 3 islas
+-- d4vidscripts: Vuelo + Fast + TP a 3 islas + Minimizar/Restaurar
 local P=game.Players.LocalPlayer
 local G=P:WaitForChild("PlayerGui")
 local S=Instance.new("ScreenGui",G) S.Name="d4vidscripts"
@@ -10,6 +10,14 @@ local M=F("Frame",S);M.Size=UDim2.new(0,320,0,220);M.Position=UDim2.new(0.35,0,0
 local H=F("Frame",M);H.Size=UDim2.new(1,0,0,30);H.BackgroundColor3=Color3.fromRGB(25,25,25)
 local T=F("TextLabel",H);T.Size=UDim2.new(1,-60,1,0);T.Position=UDim2.new(0,10,0,0)
 T.BackgroundTransparency=1;T.Text="d4vidscripts";T.TextXAlignment=Enum.TextXAlignment.Left;T.TextColor3=Color3.new(1,1,1)
+
+-- Botón minimizar/restaurar
+local minimize=F("TextButton",H);minimize.Size=UDim2.new(0,28,0,20);minimize.Position=UDim2.new(1,-58,0,5)
+minimize.Text="—";minimize.BackgroundColor3=BTN
+local floatIcon=F("TextButton",S);floatIcon.Size=UDim2.new(0,64,0,64);floatIcon.Position=UDim2.new(0.05,0,0.6,0)
+floatIcon.Text="≡";floatIcon.BackgroundColor3=ACC;floatIcon.Visible=false
+minimize.MouseButton1Click:Connect(function() M.Visible=false floatIcon.Visible=true end)
+floatIcon.MouseButton1Click:Connect(function() M.Visible=true floatIcon.Visible=false end)
 
 local content=F("Frame",M);content.Size=UDim2.new(1,0,1,-30);content.Position=UDim2.new(0,0,0,30);content.BackgroundTransparency=1
 
@@ -52,7 +60,7 @@ end
 scroll.CanvasSize=UDim2.new(0,0,0,y)
 tpBtn.MouseButton1Click:Connect(function() tpFrame.Visible=not tpFrame.Visible end)
 
--- Sistema de vuelo
+-- Vuelo
 local flying=false;local BV,BG2;local keyState={}
 local RS=game:GetService("RunService")
 local UIS=game:GetService("UserInputService")
